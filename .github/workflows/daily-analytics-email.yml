@@ -1,0 +1,28 @@
+name: Daily analytics email
+
+on:
+  schedule:
+    # Every day at 19:00 CEST / 17:00 UTC (shifts to 18:00 UTC during CET, winter)
+    - cron: "0 17 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r scripts/requirements.txt
+
+      - run: python scripts/report.py
+        env:
+          REPORT_PERIOD: daily
+          GOATCOUNTER_CODE: ${{ secrets.GOATCOUNTER_CODE }}
+          GOATCOUNTER_API_TOKEN: ${{ secrets.GOATCOUNTER_API_TOKEN }}
+          SITE_URL: "www.novelinsights.com"
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
