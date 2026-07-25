@@ -18,6 +18,17 @@ jobs:
 
       - run: pip install -r scripts/requirements.txt
 
+      - name: Debug GOATCOUNTER_CODE (temporary, reveals no secret values)
+        run: |
+          echo "GOATCOUNTER_CODE length: ${#GOATCOUNTER_CODE}"
+          if [ "$GOATCOUNTER_CODE" = "novelinsights" ]; then
+            echo "GOATCOUNTER_CODE matches expected value: yes"
+          else
+            echo "GOATCOUNTER_CODE matches expected value: no"
+          fi
+        env:
+          GOATCOUNTER_CODE: ${{ secrets.GOATCOUNTER_CODE }}
+
       - run: python scripts/report.py
         env:
           REPORT_PERIOD: daily
