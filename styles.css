@@ -201,6 +201,8 @@ a{color:inherit}
 .section.dark .subtle{color:#B9B9AF}
 .section .subtle{color:var(--muted);margin-top:6px;font-size:1.05rem}
 .section + .section{border-top:1px solid var(--line)}
+.section-cta{margin-top:32px}
+.quote-cta{margin-top:20px}
 
 /* Drop-cap intro paragraph */
 .lead{font-size:1.2rem;color:var(--ink)}
