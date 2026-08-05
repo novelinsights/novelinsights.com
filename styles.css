@@ -323,6 +323,46 @@ blockquote{
   border:1px solid var(--line);
   border-radius:8px;
 }
+.contactbox p strong,
+.card p strong{color:var(--ink-strong)}
+
+/* ---------- Quiet text link ---------- */
+.link-quiet{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-weight:600;
+  font-size:.95rem;
+  color:var(--ink-strong);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:color .2s var(--ease), border-color .2s var(--ease);
+}
+.link-quiet:hover{color:var(--green-deep);border-color:var(--green-deep)}
+
+/* ---------- Proof band ---------- */
+.proof-band{padding:32px 0}
+@media (max-width:720px){
+  .proof-band .pillrow{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
+}
+@media (max-width:480px){
+  .proof-band .pillrow{grid-template-columns:1fr}
+}
+
+/* ---------- Capabilities list ---------- */
+.cap-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:28px 32px;
+  margin:32px 0 0;
+}
+.cap-grid dt{
+  font-family:var(--font-sans);
+  font-weight:700;
+  color:var(--ink-strong);
+  margin:0 0 6px;
+}
+.cap-grid dd{margin:0;color:var(--muted)}
 
 /* ---------- Closing CTA band ---------- */
 .cta-band{
