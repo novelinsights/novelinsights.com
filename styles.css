@@ -279,6 +279,15 @@ blockquote{
   border-left:3px solid var(--green);
 }
 
+/* ---------- Sign-off block ---------- */
+.signoff{
+  margin-top:48px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+}
+.signoff strong{color:var(--ink-strong)}
+
 /* ---------- FAQ ---------- */
 .faq{border-bottom:1px solid var(--line);padding:18px 0}
 .faq summary{
