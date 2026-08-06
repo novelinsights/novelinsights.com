@@ -279,6 +279,27 @@ blockquote{
   border-left:3px solid var(--green);
 }
 
+/* ---------- Long-form article: lists, tables, byline ---------- */
+.article-meta{color:var(--muted);font-size:.95rem;margin:-8px 0 24px}
+article ul,article ol{margin:0 0 1em;padding-left:1.3em}
+article li{margin-bottom:.4em}
+article table{
+  width:100%;
+  border-collapse:collapse;
+  margin:0 0 1.5em;
+  font-size:.95rem;
+}
+article th,article td{
+  text-align:left;
+  padding:10px 12px;
+  border-bottom:1px solid var(--line);
+}
+article th{
+  font-family:var(--font-sans);
+  font-weight:700;
+  color:var(--ink-strong);
+}
+
 /* ---------- Sign-off block ---------- */
 .signoff{
   margin-top:48px;
@@ -325,6 +346,7 @@ blockquote{
 }
 .contactbox p strong,
 .card p strong{color:var(--ink-strong)}
+.box-heading{font-size:1.25rem}
 
 /* ---------- Quiet text link ---------- */
 .link-quiet{
