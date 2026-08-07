@@ -1,0 +1,11 @@
+/* Mobile navigation fallback for when JavaScript is unavailable.
+   Loaded only via <noscript><link ...></noscript> — see script.js for why:
+   the toggle button has no non-JS way to open the nav, so this forces it
+   open and hides the now-inert toggle instead. External file (not an
+   inline <style>) so it works under the site's Content-Security-Policy,
+   which does not allow 'unsafe-inline' for style-src. */
+.nav-toggle{display:none}
+@media (max-width:720px){
+  .nav{display:flex!important;position:static;flex-direction:column;align-items:flex-start;gap:0;padding:8px 0 8px}
+  .nav a{width:100%;padding:12px 0}
+}

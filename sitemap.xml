@@ -2,20 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.novelinsights.com/</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://www.novelinsights.com/services.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.novelinsights.com/services/enterprise-architecture-governance.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.novelinsights.com/services/resilience-critical-systems.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.novelinsights.com/services/ai-governance-readiness.html</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://www.novelinsights.com/insights.html</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://www.novelinsights.com/founder-story.html</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://www.novelinsights.com/about.html</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
   <url>
     <loc>https://www.novelinsights.com/contact.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.novelinsights.com/privacy.html</loc>
+    <lastmod>2026-08-07</lastmod>
+  </url>
+  <url>
+    <loc>https://www.novelinsights.com/accessibility.html</loc>
+    <lastmod>2026-08-07</lastmod>
   </url>
 </urlset>
