@@ -14,24 +14,44 @@
   <meta property="og:url" content="https://www.novelinsights.com/about.html">
   <meta property="og:image" content="https://www.novelinsights.com/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@NovelinsightsHQ">
 
-  <link rel="icon" href="assets/favicon.png?v=2">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
+
+  <noscript><link rel="stylesheet" href="noscript.css"></noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.novelinsights.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.novelinsights.com/about.html" }
+    ]
+  }
+  </script>
 
   <script data-goatcounter="https://novelinsights.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
 </head>
 <body data-page="about">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <header class="site-header">
   <div class="container nav-wrap">
     <a class="brand" href="index.html">
-      <img class="brandmark" src="assets/favicon.png" alt="Novel Insights logo">
+      <img class="brandmark" src="assets/favicon-32.png" alt="Novel Insights logo" width="30" height="30">
       <span>Novel Insights</span>
     </a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
@@ -47,6 +67,7 @@
   </div>
 </header>
 
+<main id="main-content">
 <header class="page-header">
   <div class="container">
     <p class="kicker">About</p>
@@ -87,7 +108,7 @@
       </div>
       <div>
         <dt>Chamber of Commerce (KVK)</dt>
-        <dd>[KVK number]</dd>
+        <dd>87789604</dd>
       </div>
       <div>
         <dt>Email</dt>
@@ -109,37 +130,44 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
       <a class="brand" href="index.html">
-        <img class="brandmark" src="assets/favicon.png" alt="Novel Insights logo">
+        <img class="brandmark" src="assets/favicon-32.png" alt="Novel Insights logo" width="30" height="30">
         <span>Novel Insights</span>
       </a>
       <p class="footer-tag">Making Technology Meaningful</p>
     </div>
     <nav class="footer-col" aria-label="Sitemap">
-      <h4>Sitemap</h4>
+      <p class="footer-col-label">Sitemap</p>
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
+      <a href="services/enterprise-architecture-governance.html">Enterprise Architecture Capability and Governance</a>
+      <a href="services/resilience-critical-systems.html">Resilience and Critical Systems Architecture</a>
+      <a href="services/ai-governance-readiness.html">AI Architecture and Governance Readiness</a>
       <a href="insights.html">Insights</a>
       <a href="founder-story.html">Founder Story</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="accessibility.html">Accessibility</a>
       <a href="contact.html">Contact</a>
     </nav>
     <div class="footer-col">
-      <h4>Contact</h4>
+      <p class="footer-col-label">Contact</p>
       <a href="mailto:hello@novelinsights.com">hello@novelinsights.com</a>
       <a href="tel:+31683393809">+31 6 83 39 38 09</a>
     </div>
     <div class="footer-col">
-      <h4>Follow</h4>
+      <p class="footer-col-label">Follow</p>
       <a href="https://www.linkedin.com/company/novelinsights" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.x.com/NovelinsightsHQ" target="_blank" rel="noopener">X (Twitter)</a>
     </div>
   </div>
   <div class="container footer-bottom">
-    <small>&copy; 2022–<span id="year"></span> Novel Insights • Making Technology Meaningful</small>
+    <small>&copy; 2022–<span id="year"></span> Novel Insights • Making Technology Meaningful • KVK 87789604 • VAT NL004478158B54</small>
   </div>
 </footer>
 

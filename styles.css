@@ -12,6 +12,7 @@
   --line:       #E3DECF;
   --green:      #4EBB24;
   --green-deep: #2E7D1B;
+  --green-deep-a11y: #276818; /* darker than --green-deep: keeps .kicker at 4.5:1+ on paper-alt */
   --muted:      #5B5C54;
   --white:      #FFFFFF;
 
@@ -52,6 +53,44 @@ a{color:inherit}
 .container{max-width:var(--container);margin:0 auto;padding:0 24px}
 .narrow{max-width:760px}
 
+/* ---------- Skip link ---------- */
+.skip-link{
+  position:absolute;
+  left:0;
+  top:-48px;
+  background:var(--ink-strong);
+  color:var(--paper);
+  padding:12px 20px;
+  font-family:var(--font-sans);
+  font-weight:700;
+  font-size:.9rem;
+  text-decoration:none;
+  border-radius:0 0 6px 0;
+  z-index:100;
+  transition:top .15s var(--ease);
+}
+.skip-link:focus{
+  top:0;
+}
+
+/* ---------- Focus visibility (WCAG 2.2 AA) ---------- */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible{
+  outline:3px solid var(--green-deep);
+  outline-offset:2px;
+  border-radius:2px;
+}
+.cta-band :focus-visible,
+.section.dark :focus-visible{
+  outline-color:var(--green);
+}
+.skip-link:focus-visible{
+  outline:3px solid var(--green);
+  outline-offset:2px;
+}
+
 /* ---------- Kicker / eyebrow ---------- */
 .kicker{
   display:inline-flex;
@@ -62,7 +101,7 @@ a{color:inherit}
   font-weight:700;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:var(--green-deep);
+  color:var(--green-deep-a11y);
   margin:0 0 14px;
 }
 .kicker::before{
@@ -177,7 +216,7 @@ a{color:inherit}
 .btn.ghost{border-color:var(--ink);color:var(--ink-strong)}
 .btn.ghost:hover{border-color:var(--green-deep);color:var(--green-deep)}
 
-.pillrow{display:flex;flex-wrap:wrap;gap:10px 22px}
+.pillrow{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;margin:0;padding:0}
 .pillrow .pill{
   font-size:.85rem;
   font-weight:600;
@@ -249,12 +288,8 @@ a{color:inherit}
 .section.alt .grid .card{background:var(--paper-alt)}
 .card h3{margin-bottom:8px}
 .card p{color:var(--muted);margin:0}
-
-.twocol{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:40px;
-}
+.card p + p{margin-top:.75em}
+.card-cta{margin:14px 0 0}
 
 /* ---------- Founder ---------- */
 .founder-grid{
@@ -283,10 +318,11 @@ blockquote{
 .article-meta{color:var(--muted);font-size:.95rem;margin:-8px 0 24px}
 article ul,article ol{margin:0 0 1em;padding-left:1.3em}
 article li{margin-bottom:.4em}
+.table-scroll{overflow-x:auto;margin:0 0 1.5em}
 article table{
   width:100%;
   border-collapse:collapse;
-  margin:0 0 1.5em;
+  margin:0;
   font-size:.95rem;
 }
 article th,article td{
@@ -411,9 +447,11 @@ article th{
   gap:32px;
 }
 .footer-tag{color:var(--muted);font-size:.92rem;margin-top:8px}
-.footer-col h4{
+.footer-col-label{
   font-family:var(--font-sans);
   font-size:.8rem;
+  font-weight:500;
+  line-height:1.15;
   text-transform:uppercase;
   letter-spacing:.1em;
   color:var(--muted);
@@ -431,11 +469,15 @@ article th{
 }
 
 /* ---------- Scroll reveal ---------- */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+/* Visible by default so every page works with JavaScript disabled. script.js
+   adds .reveal-pending itself before it starts observing, then swaps it for
+   .is-visible on scroll into view — so a page with no JS never hides content. */
+.reveal{opacity:1;transform:none}
+.reveal.reveal-pending{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.is-visible{opacity:1;transform:none}
 
 @media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
+  .reveal,.reveal.reveal-pending{opacity:1;transform:none;transition:none}
   html{scroll-behavior:auto}
 }
 
@@ -444,7 +486,6 @@ article th{
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px 20px}
 }
 @media (max-width:720px){
-  .twocol{grid-template-columns:1fr}
   .founder-grid{grid-template-columns:1fr}
   .headshot{width:140px;height:140px}
   .hero{padding:56px 0 40px}
