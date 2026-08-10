@@ -33,7 +33,16 @@
           }
         });
       },
-      { threshold: 0.12 }
+      // threshold: 0 + a negative bottom rootMargin fires as soon as an
+      // element's top edge crosses into view, regardless of how tall the
+      // element is. A percentage threshold (e.g. 0.12) instead depends on
+      // what fraction of the element's *own* height is visible at once —
+      // for long single-wrapper content (e.g. founder-story.html) that
+      // fraction can be unreachable on short mobile viewports, since a
+      // narrow column makes the block far taller while the viewport is
+      // also shorter, so the reveal never fires and the content stays
+      // hidden.
+      { threshold: 0, rootMargin: '0px 0px -10% 0px' }
     );
     revealEls.forEach(function (el) { observer.observe(el); });
   }
