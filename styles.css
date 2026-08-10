@@ -288,6 +288,30 @@ summary:focus-visible,
 .card p{color:var(--muted);margin:0}
 .card p + p{margin-top:.75em}
 .card-cta{margin:14px 0 0}
+.card-eyebrow{
+  font-size:.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--green-deep-a11y);
+  margin:0 0 8px;
+}
+
+/* Six deliverable cards read better at two or three columns than the
+   default four-column ceiling other .grid instances use — a wider
+   minmax floor keeps the last row from splitting unevenly. */
+#deliverables .grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+/* ---------- Situation list (homepage "when to involve") ---------- */
+.situation-list{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:18px}
+.situation-list li{position:relative;padding-left:22px;color:var(--ink)}
+.situation-list li::before{
+  content:"";
+  position:absolute;left:0;top:.6em;
+  width:7px;height:7px;
+  background:var(--green);
+  border-radius:1px;
+}
 
 /* ---------- Founder ---------- */
 .founder-grid{
