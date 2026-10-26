@@ -502,9 +502,10 @@ article li{margin-bottom:.4em}
 /* ---------- Article listing (Insights index) ---------- */
 .article-list{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--line)}
 .article-list > li{padding:24px 0;border-bottom:1px solid var(--line)}
-.article-list h2{font-size:1.45rem;margin:0 0 6px}
-.article-list h2 a{text-decoration:none}
-.article-list h2 a:hover{color:var(--green-deep)}
+.article-list h2,.article-list h3{font-size:1.45rem;margin:0 0 6px}
+.article-list h2 a,.article-list h3 a{text-decoration:none}
+.article-list h2 a:hover,.article-list h3 a:hover{color:var(--green-deep)}
+.article-teaser{max-width:760px}
 .article-list .article-meta{color:var(--muted);font-size:.95rem;margin:0 0 8px}
 .article-list p{color:var(--muted)}
 .article-list .article-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:14px 0 0}
