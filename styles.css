@@ -373,43 +373,141 @@ blockquote{
   border-left:3px solid var(--green);
 }
 
-/* ---------- Long-form article: lists, tables, byline ---------- */
-.article-meta{color:var(--muted);font-size:.95rem;margin:-8px 0 24px}
+/* ---------- Long-form article: lists ---------- */
 article ul,article ol{margin:0 0 1em;padding-left:1.3em}
 article li{margin-bottom:.4em}
-.table-scroll{overflow-x:auto;margin:0 0 1.5em}
-article table{
-  width:100%;
-  border-collapse:collapse;
-  margin:0;
-  font-size:.95rem;
-}
-article th,article td{
-  text-align:left;
-  padding:10px 12px;
+
+/* ---------- Insights article page ---------- */
+.article-header h1{font-size:clamp(2rem,4.2vw,2.75rem)}
+.article-byline{color:var(--muted);font-size:.95rem;margin:4px 0 22px}
+.article-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;margin:0}
+.article-actions .btn{padding:10px 18px}
+.article-doi{
+  color:var(--muted);
+  font-size:.85rem;
+  text-decoration:none;
   border-bottom:1px solid var(--line);
 }
-article th{
+.article-doi:hover{color:var(--green-deep);border-color:var(--green-deep)}
+
+.article-body{font-size:1.06rem;line-height:1.75}
+.article-body p{margin:0 0 1.15em}
+.article-body h2{font-size:clamp(1.45rem,2.6vw,1.8rem);margin:2.2em 0 .6em}
+.article-body > h2:first-child{margin-top:0}
+.article-body li{margin-bottom:.5em}
+
+/* Figure 1: centred at its native width, italic caption */
+.article-figure{margin:2.25em 0;text-align:center}
+.article-figure img{
+  width:100%;
+  max-width:680px;
+  height:auto;
+  margin:0 auto;
+  border:1px solid var(--line);
+  background:var(--white);
+}
+.article-figure figcaption{
+  max-width:680px;
+  margin:12px auto 0;
+  color:var(--muted);
+  font-size:.88rem;
+  font-style:italic;
+  line-height:1.5;
+}
+
+/* .pull-quote is centred for the home page band; inside an article it
+   reads as a left-ruled blockquote instead */
+.article-body .pull-quote{
+  text-align:left;
+  margin:2em 0;
+  padding:4px 0 4px 24px;
+  font-size:clamp(1.35rem,2.4vw,1.65rem);
+}
+.article-body .pull-quote p{margin:0}
+
+/* Two-column comparison table; scrolls sideways on narrow screens
+   rather than squeezing or clipping text */
+.table-wrap{
+  overflow-x:auto;
+  margin:2em 0;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--white);
+}
+.comparison-table{width:100%;border-collapse:collapse;font-size:.95rem;line-height:1.55}
+.comparison-table th,
+.comparison-table td{
+  width:50%;
+  padding:14px 16px;
+  text-align:left;
+  vertical-align:top;
+  border-bottom:1px solid var(--line);
+}
+.comparison-table th + th,
+.comparison-table td + td{border-left:1px solid var(--line)}
+.comparison-table thead th{
+  background:var(--paper-alt);
   font-family:var(--font-sans);
   font-weight:700;
   color:var(--ink-strong);
 }
+.comparison-table tbody tr:last-child td{border-bottom:0}
+.comparison-table strong{color:var(--ink-strong)}
 
-/* ---------- Article figures and references ---------- */
-.article-figure{margin:2em 0}
-.article-figure img{width:100%;height:auto;border:1px solid var(--line);background:var(--white)}
-.article-figure figcaption{color:var(--muted);font-size:.92rem;margin-top:10px}
-.references li{font-size:.95rem;color:var(--muted);overflow-wrap:anywhere}
+/* About block holds the page's only call to action */
+.article-about{
+  margin:3em 0 0;
+  padding:28px;
+  background:var(--paper-alt);
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.article-body .article-about h2{margin-top:0;font-size:1.4rem}
+.article-body .article-cta{
+  margin:1.25em 0 0;
+  padding:14px 18px;
+  background:var(--white);
+  border-left:3px solid var(--green);
+  font-weight:600;
+}
+.article-cta a{
+  color:var(--green-deep-a11y);
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+}
+.article-cta a:hover{color:var(--ink-strong)}
 
-/* ---------- Article listing (Insights index, home teaser) ---------- */
+.article-references{margin-top:3em}
+.reference-list{list-style:none;margin:0;padding:0;font-size:.9rem;line-height:1.6;color:var(--muted)}
+.reference-list li{padding-left:2em;text-indent:-2em;margin-bottom:.8em;overflow-wrap:anywhere}
+.reference-list a{color:var(--ink)}
+
+.article-body .article-meta{
+  margin:3em 0 0;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.85rem;
+  line-height:1.55;
+}
+.article-body .article-meta p{margin:0 0 .7em;overflow-wrap:anywhere}
+
+.article-back{margin:40px 0 0}
+
+@media (max-width:600px){
+  .comparison-table{min-width:520px}
+  .article-about{padding:20px}
+}
+
+/* ---------- Article listing (Insights index) ---------- */
 .article-list{list-style:none;margin:32px 0 0;padding:0;border-top:1px solid var(--line)}
 .article-list > li{padding:24px 0;border-bottom:1px solid var(--line)}
-.article-list h3{margin:0 0 6px}
-.article-list h3 a{text-decoration:none}
-.article-list h3 a:hover{color:var(--green-deep)}
-.article-list .article-meta{margin:0 0 8px}
+.article-list h2{font-size:1.45rem;margin:0 0 6px}
+.article-list h2 a{text-decoration:none}
+.article-list h2 a:hover{color:var(--green-deep)}
+.article-list .article-meta{color:var(--muted);font-size:.95rem;margin:0 0 8px}
 .article-list p{color:var(--muted)}
-.article-list p:last-child{margin-bottom:0}
+.article-list .article-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:14px 0 0}
 
 /* ---------- Sign-off block ---------- */
 .signoff{
